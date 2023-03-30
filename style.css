@@ -1,0 +1,100 @@
+body{
+    background-color: #e7eef7;
+}
+
+#grid-container{
+    padding: 10px;
+    margin: 0 0 15px 0
+}
+
+.basic-grid{
+
+    border-radius: 9px;
+    background-color: #fff;
+    box-shadow: 4px 4px 22px -2px #00000069;
+    padding: 10px;
+    margin: 0 0 20px 0;
+}
+
+.basic-grid .basic-grid-title{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 24px;
+    margin: 0 0 8px 0;
+}
+
+.basic-grid .grid-row{
+    display: flex;
+}
+.basic-grid .grid-row.selected-row{
+    
+    box-shadow: 1px 1px 5px -2px #000;
+    z-index: 1;
+    position: relative;
+    border-radius: 3px;
+}
+.basic-grid .grid-row.selected-row .grid-cell{
+    background-image: linear-gradient(180deg, #b3d4ff, #aed2ff);
+    border: 1px solid #b2d3ff;
+    color: #012d67;
+}
+.basic-grid .grid-row.selected-row .grid-cell:first-child{
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+}
+.basic-grid .grid-row.selected-row .grid-cell:last-child{
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+}
+
+.basic-grid .grid-row:nth-child(odd) .grid-cell{
+
+    background-color: #e8f1fd;
+}
+
+.basic-grid .grid-row .grid-cell{
+    width: 100%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 6px;
+    border: 1px solid #e6e6e6;
+    margin: -1px -1px 0 0;
+    font-size: 14px;
+    color: #4e4e4e;
+}
+.basic-grid .grid-row.grid-head .grid-cell:first-child{
+    border-top-left-radius: 3px;
+}
+.basic-grid .grid-row.grid-head .grid-cell:last-child{
+    border-top-right-radius: 3px;
+}
+.basic-grid .grid-row:last-child .grid-cell:first-child{
+    border-bottom-left-radius: 5px;
+}
+.basic-grid .grid-row:last-child .grid-cell:last-child{
+    border-bottom-right-radius: 5px;
+}
+.basic-grid .grid-row.grid-head{
+
+    margin: 0 0 8px 0;
+    border-radius: 3px;
+}
+
+.basic-grid .grid-row.grid-head .grid-cell{
+
+    margin: 0px -1px 0 0;
+    background-image: linear-gradient(180deg, #a4ccff, #60a5ff);
+    color: #1f559c;
+    font-weight: bold;
+    border: 1px solid #92bef7;
+    position: relative;
+    display: block;
+    clear: both;
+}
+
+.basic-grid .grid-row.grid-head .grid-cell .grid-sort{
+    float: right;
+    cursor: pointer;
+}
+
+.grid-sort.asc, .grid-sort.desc{
+    color: #fff;
+}
