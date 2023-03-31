@@ -108,7 +108,9 @@ function renderGrid(data, headers, renderTo, titleText) {
 
         for(const head of headers){
             cell = createElement("div", "grid-cell",
-                head.render ? head.render(d) : d[head.key]
+                head.render ? head.render(d) : (
+                    typeof d[head.key] === 'string' || typeof d[head.key] === 'number' ? d[head.key] : (head.key === "company" ? d[head.key].name : d[head.key].city + ", " + d[head.key].street + ", " + d[head.key].suite)
+                )
             );
             cell.style.width = head.width ? head.width : "100%";
             row.appendChild(cell);
@@ -132,9 +134,10 @@ document.getElementById("load").onclick = function(){
                 {key: "name", text: "Teljes név", sortable: true},
                 {key: "website", text: "Weboldal", sortable: true},
                 {key: "phone", text: "Telefonszám", sortable: true},
-                
-               
                 {key: "email", text: "Email", sortable: true},
+                {key: "address", text: "Lakcím", sortable: true},
+                {key: "company", text: "Cégnév", sortable: true},
+                {key: "email", text: "Email", sortable: true}
                 
              ],
              "#grid-container",
